@@ -1,18 +1,19 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> sol(2);
-        for(int i =0;i<nums.size();i++)
+        unordered_set <int> set ;
+        vector<int> result;
+        for(int i=0;i<nums.size();i++)
         {
-            for(int j = i+1; j<nums.size();j++)
-            {
-                if(nums[i]+nums[j]==target)
-                {
-                   sol[0]=i;
-                   sol[1]=j;
-                }
+            int x = target - nums[i];
+            if(set.find(x) != set.end()){
+                auto it = find(nums.begin(), nums.end(), x);
+                int index = it - nums.begin();
+                result.push_back(index);
+                result.push_back(i);
             }
+            set.insert(nums[i]);
         }
-        return sol;
+        return result;
     }
 };
