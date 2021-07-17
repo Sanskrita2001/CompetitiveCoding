@@ -12,14 +12,17 @@ void replace_space(char *str){
     }
     n += count*2;
     str[n]='\0';
-    for (int i = strlen(str)-1; i >=0; i--) {
+    for (int i = strlen(str)-1; i>=0; i--) {
         /* code */
         if(str[i]==' '){
-            str[i-2]='%';
-            str[i-1]='2';
-            str[i]='0';
+            str[n-3]='%';
+            str[n-2]='2';
+            str[n-1]='0';
+            n=n-3;
         }
-        str[n--]=str[i];
+        else{
+        str[n-1]=str[i];
+        n--;}
     }
 }
 
