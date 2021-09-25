@@ -28,11 +28,6 @@ public:
             second=second->next;
         }
         cout<<second->val;
-        // if(second->next==NULL){
-        //     second = NULL;
-        //     return head;
-        // }   
-        // second->val=second->next->val;
         second->next=second->next->next;
         return head;
     }
