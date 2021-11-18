@@ -6,10 +6,10 @@ public:
         if(x<0||x>=m||y<0||y>=n||board[x][y]!='O')
             return;
         board[x][y]=c;
-        dfs(board,x+1,y,'1');
-        dfs(board,x-1,y,'1');
-        dfs(board,x,y+1,'1');
-        dfs(board,x,y-1,'1');
+        dfs(board,x+1,y,c);
+        dfs(board,x-1,y,c);
+        dfs(board,x,y+1,c);
+        dfs(board,x,y-1,c);
     }
     void solve(vector<vector<char>>& board) {
         int m=board.size();
