@@ -25,8 +25,8 @@ public:
                 if(j+1<n)
                     down = dp[0][j+1];
                 dp[0][j]=right+down;
-                dp[1]=dp[0];
             }
+            dp[1]=dp[0];
         }
         return dp[0][0];
     }
